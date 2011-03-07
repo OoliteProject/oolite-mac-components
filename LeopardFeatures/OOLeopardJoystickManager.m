@@ -121,7 +121,7 @@ static void HandleDeviceRemovalCallback(void * inContext, IOReturn inResult, voi
 
 - (void) handleJoystickAttach:(IOHIDDeviceRef)device
 {
-	OOLog(@"joystick.connect", @"Joystick connected: %@ %@", IOHIDDeviceGetProperty(device, CFSTR(kIOHIDProductKey)), device);
+	OOLog(@"joystick.connect", @"Joystick connected: %@", IOHIDDeviceGetProperty(device, CFSTR(kIOHIDProductKey)));
 	
 	CFArrayAppendValue(devices, device);
 	IOHIDDeviceRegisterInputValueCallback(device, HandleInputValueCallback, self);
