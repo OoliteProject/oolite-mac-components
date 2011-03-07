@@ -228,6 +228,7 @@
 				GCC_MODEL_TUNING = G5;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = "Oolite Leopard support";
 				SDKROOT = macosx10.5;
 				SYMROOT = ../../build;
@@ -255,6 +256,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = "Oolite Leopard support";
 				SDKROOT = macosx10.5;
 				SYMROOT = ../../build;
@@ -279,6 +281,7 @@
 				GCC_MODEL_TUNING = G5;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = "Oolite Leopard support";
 				SDKROOT = macosx10.5;
 				SYMROOT = ../../build;
