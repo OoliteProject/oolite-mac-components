@@ -232,9 +232,6 @@ static BOOL GetMetadataForOXP(void* thisInterface, NSMutableDictionary *attribut
 		if (string != nil)  [attributes setObject:string forKey:(NSString *)kMDItemURL];
 	}
 	
-	// Attempt to make OXPs searchable even if they're in ~/Library.
-	[attributes setObject:[NSArray arrayWithObject:@""] forKey:(NSString *)kMDItemSupportFileType];
-	
 	return YES;
 }
 
