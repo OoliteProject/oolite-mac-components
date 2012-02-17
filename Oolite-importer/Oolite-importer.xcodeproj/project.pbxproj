@@ -163,7 +163,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 1A1AB0810909AE56001039FA /* Build configuration list for PBXProject "Oolite-importer" */;
 			compatibilityVersion = "Xcode 3.2";
