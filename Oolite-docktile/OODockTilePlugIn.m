@@ -88,7 +88,7 @@ static NSArray *ResourceManagerRootPaths(void);
 	{
 		path = [rootPaths objectAtIndex:i];
 		if ([[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&pathIsDirectory] && pathIsDirectory) break;
-	} 
+	}
 	if (path != nil) [[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:path]];
 }
 
@@ -185,7 +185,7 @@ static NSString *DESC(NSString *key)
 			{
 				// Check name from previous access, because we might have changed localizations.
 				NSString *originalOldName = GetPreference(kSnapshotsDirNameKey, [NSString class]);
-				if ([existingName compare:originalOldName options:NSCaseInsensitiveSearch] != 0)
+				if (originalOldName == nil || [existingName compare:originalOldName options:NSCaseInsensitiveSearch] != 0)
 				{
 					url = nil;
 				}
@@ -302,7 +302,7 @@ static NSString *OOLogHandlerGetLogBasePath(void)
 static NSArray *ResourceManagerRootPaths(void)
 {
 	// Adapted from -[ResourceManager rootPaths].
-	return [[NSArray alloc] initWithObjects:
+	return [NSArray arrayWithObjects:
 			[[[[NSHomeDirectory() stringByAppendingPathComponent:@"Library"]
 			   stringByAppendingPathComponent:@"Application Support"]
 			  stringByAppendingPathComponent:@"Oolite"]
