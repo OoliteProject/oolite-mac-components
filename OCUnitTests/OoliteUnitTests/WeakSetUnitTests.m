@@ -138,10 +138,4 @@ This code is hereby placed in the public domain.
 	STAssertFalse([set containsObject:nine], @"Strong set should not contain object not copied from weak set.");
 }
 
-
-- (void) testFail
-{
-	STAssertTrue(true, @"This should fail.");
-}
-
 @end
