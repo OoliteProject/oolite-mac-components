@@ -166,7 +166,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = OO;
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "The Oolite team";
 			};
 			buildConfigurationList = 1AD7C5F315AEF30F008C3BC8 /* Build configuration list for PBXProject "OoliteUnitTests" */;
@@ -243,6 +243,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1AF4AF5A15B861E3009243BE /* oolite-targets.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OoliteUnitTests/OoliteUnitTests-Prefix.pch";
@@ -257,6 +258,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1AF4AF5A15B861E3009243BE /* oolite-targets.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OoliteUnitTests/OoliteUnitTests-Prefix.pch";
