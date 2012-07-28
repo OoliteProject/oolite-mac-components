@@ -163,7 +163,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = 1A1AB0810909AE56001039FA /* Build configuration list for PBXProject "Oolite-importer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -235,6 +235,7 @@
 		1A0832E50C2F10BC00E3AE25 /* TestRelease */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -287,6 +288,7 @@
 		1A1AB07E0909AE56001039FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUGGING_SYMBOLS = YES;
@@ -334,6 +336,7 @@
 		1ADCD4380975615F0038B52E /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
