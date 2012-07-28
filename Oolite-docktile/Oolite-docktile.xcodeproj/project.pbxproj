@@ -26,6 +26,7 @@
 		1A60EE7811B82D8100224F2D /* OODockTilePlugIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OODockTilePlugIn.m; sourceTree = "<group>"; };
 		1A60EE8B11B82EA200224F2D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/OODockTilePlugIn.xib; sourceTree = "<group>"; };
 		1A60EEA011B832A100224F2D /* NSFileManagerOOExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSFileManagerOOExtensions.h; path = ../../src/Core/NSFileManagerOOExtensions.h; sourceTree = SOURCE_ROOT; };
+		1AE38EC215C3FEED000709CA /* oolite-targets.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = "oolite-targets.xcconfig"; path = "../../src/Cocoa/oolite-targets.xcconfig"; sourceTree = "<group>"; };
 		32DBCF630370AF2F00C91783 /* Oolite-docktile_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Oolite-docktile_Prefix.pch"; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* Oolite.docktileplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Oolite.docktileplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		089C166AFE841209C02AAC07 /* Oolite-docktile */ = {
 			isa = PBXGroup;
 			children = (
+				1AE38EC215C3FEED000709CA /* oolite-targets.xcconfig */,
 				08FB77AFFE84173DC02AAC07 /* Source */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
@@ -221,16 +223,15 @@
 		1A01BD0C11C56C2E0011197F /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				SDKROOT = macosx10.6;
 			};
 			name = Deployment;
 		};
 		1A01BD0D11C56C2E0011197F /* Deployment */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AE38EC215C3FEED000709CA /* oolite-targets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = (
@@ -243,7 +244,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Oolite-docktile_Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = Oolite;
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -259,6 +259,7 @@
 		};
 		1DEB913B08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AE38EC215C3FEED000709CA /* oolite-targets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = (
@@ -272,9 +273,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Oolite-docktile_Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
-				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Oolite;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SYMROOT = ../../build;
@@ -289,6 +288,7 @@
 		};
 		1DEB913C08733D840010E9CD /* TestRelease */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AE38EC215C3FEED000709CA /* oolite-targets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = (
@@ -301,7 +301,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Oolite-docktile_Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = Oolite;
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -318,24 +317,20 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.6;
 			};
 			name = Debug;
 		};
 		1DEB914008733D840010E9CD /* TestRelease */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				SDKROOT = macosx10.6;
 			};
 			name = TestRelease;
 		};
