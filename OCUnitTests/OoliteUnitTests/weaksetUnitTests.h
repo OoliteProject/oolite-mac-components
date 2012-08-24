@@ -1,5 +1,5 @@
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface weaksetUnitTests : SenTestCase
+@interface weaksetUnitTests: SenTestCase
 
 @end
