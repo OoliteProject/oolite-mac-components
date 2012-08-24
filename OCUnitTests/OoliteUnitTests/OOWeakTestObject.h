@@ -19,7 +19,7 @@ This code is hereby placed in the public domain.
 }
 
 - (id) initWithValue:(NSUInteger)value;
-+ (id) objectWithValue:(NSUInteger)value;
++ (instancetype) objectWithValue:(NSUInteger)value;
 
 @property (readonly) NSUInteger value;
 

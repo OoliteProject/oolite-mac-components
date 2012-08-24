@@ -22,7 +22,7 @@
 }
 
 
-+ (id) objectWithValue:(NSUInteger)value;
++ (instancetype) objectWithValue:(NSUInteger)value;
 {
 	return [[[self alloc] initWithValue:value] autorelease];
 }
