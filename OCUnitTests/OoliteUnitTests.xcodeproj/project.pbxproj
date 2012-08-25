@@ -11,6 +11,8 @@
 		1A0CD53A15AF0BCE00970505 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0CD53915AF0BCE00970505 /* Cocoa.framework */; };
 		1A0CD54415AF0BCE00970505 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A0CD54215AF0BCE00970505 /* InfoPlist.strings */; };
 		1A0CD54F15AF0CFE00970505 /* OOWeakTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0CD54E15AF0CFE00970505 /* OOWeakTestObject.m */; };
+		1A5748DF15E96088005D1D8A /* OOIsNumberLiteralTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5748DE15E96088005D1D8A /* OOIsNumberLiteralTests.m */; };
+		1A5748E315E960A5005D1D8A /* OOIsNumberLiteral.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5748E215E960A5005D1D8A /* OOIsNumberLiteral.m */; };
 		1AB2D62B15B86F1100177AAF /* OOWeakReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2D62815B86F1100177AAF /* OOWeakReference.m */; };
 		1AB2D62C15B86F1100177AAF /* OOWeakSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2D62A15B86F1100177AAF /* OOWeakSet.m */; };
 		1AB2D62F15B86F8000177AAF /* WeakSetUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2D62E15B86F8000177AAF /* WeakSetUnitTests.m */; };
@@ -28,6 +30,10 @@
 		1A0CD54815AF0BCE00970505 /* OoliteUnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OoliteUnitTests-Prefix.pch"; sourceTree = "<group>"; };
 		1A0CD54D15AF0CFE00970505 /* OOWeakTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OOWeakTestObject.h; sourceTree = "<group>"; };
 		1A0CD54E15AF0CFE00970505 /* OOWeakTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OOWeakTestObject.m; sourceTree = "<group>"; };
+		1A5748DD15E96088005D1D8A /* OOIsNumberLiteralTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OOIsNumberLiteralTests.h; sourceTree = "<group>"; };
+		1A5748DE15E96088005D1D8A /* OOIsNumberLiteralTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OOIsNumberLiteralTests.m; sourceTree = "<group>"; };
+		1A5748E115E960A5005D1D8A /* OOIsNumberLiteral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOIsNumberLiteral.h; path = src/Core/OOIsNumberLiteral.h; sourceTree = "<group>"; };
+		1A5748E215E960A5005D1D8A /* OOIsNumberLiteral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOIsNumberLiteral.m; path = src/Core/OOIsNumberLiteral.m; sourceTree = "<group>"; };
 		1AB2D62615B86F1100177AAF /* OOCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOCocoa.h; path = src/Core/OOCocoa.h; sourceTree = "<group>"; };
 		1AB2D62715B86F1100177AAF /* OOWeakReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOWeakReference.h; path = src/Core/OOWeakReference.h; sourceTree = "<group>"; };
 		1AB2D62815B86F1100177AAF /* OOWeakReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOWeakReference.m; path = src/Core/OOWeakReference.m; sourceTree = "<group>"; };
@@ -67,6 +73,8 @@
 			children = (
 				1AB2D62D15B86F8000177AAF /* weaksetUnitTests.h */,
 				1AB2D62E15B86F8000177AAF /* WeakSetUnitTests.m */,
+				1A5748DD15E96088005D1D8A /* OOIsNumberLiteralTests.h */,
+				1A5748DE15E96088005D1D8A /* OOIsNumberLiteralTests.m */,
 			);
 			name = "Unit tests";
 			path = OoliteUnitTests;
@@ -133,6 +141,8 @@
 				1AB2D62815B86F1100177AAF /* OOWeakReference.m */,
 				1AB2D62915B86F1100177AAF /* OOWeakSet.h */,
 				1AB2D62A15B86F1100177AAF /* OOWeakSet.m */,
+				1A5748E115E960A5005D1D8A /* OOIsNumberLiteral.h */,
+				1A5748E215E960A5005D1D8A /* OOIsNumberLiteral.m */,
 			);
 			name = "Oolite parts";
 			path = ../..;
@@ -222,6 +232,8 @@
 				1AB2D62B15B86F1100177AAF /* OOWeakReference.m in Sources */,
 				1AB2D62C15B86F1100177AAF /* OOWeakSet.m in Sources */,
 				1AB2D62F15B86F8000177AAF /* WeakSetUnitTests.m in Sources */,
+				1A5748DF15E96088005D1D8A /* OOIsNumberLiteralTests.m in Sources */,
+				1A5748E315E960A5005D1D8A /* OOIsNumberLiteral.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
