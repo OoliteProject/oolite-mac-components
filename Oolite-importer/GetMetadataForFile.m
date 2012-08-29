@@ -93,7 +93,7 @@ static BOOL GetMetadataForSaveFile(void* thisInterface, NSMutableDictionary *att
 	BOOL					ok = NO;
 	NSDictionary			*content;
 	id						value;
-	OOInteger				killCount;
+	NSInteger				killCount;
 	
 	content = [NSDictionary dictionaryWithContentsOfFile:pathToFile];			
 	if (nil != content)
