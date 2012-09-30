@@ -266,7 +266,7 @@
 			};
 			name = Debug;
 		};
-		1A0CD54A15AF0BCE00970505 /* Release */ = {
+		1A0CD54A15AF0BCE00970505 /* TestRelease */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1AF4AF5A15B861E3009243BE /* oolite-targets.xcconfig */;
 			buildSettings = {
@@ -279,7 +279,40 @@
 				TEST_AFTER_BUILD = YES;
 				WRAPPER_EXTENSION = octest;
 			};
-			name = Release;
+			name = TestRelease;
+		};
+		1A6A1C5A16175333005BB3B3 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SYMROOT = ../../build;
+			};
+			name = Deployment;
+		};
+		1A6A1C5B16175333005BB3B3 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AF4AF5A15B861E3009243BE /* oolite-targets.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OoliteUnitTests/OoliteUnitTests-Prefix.pch";
+				INFOPLIST_FILE = "OoliteUnitTests/OoliteUnitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Deployment;
 		};
 		1AD7C60615AEF310008C3BC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -306,7 +339,7 @@
 			};
 			name = Debug;
 		};
-		1AD7C60715AEF310008C3BC8 /* Release */ = {
+		1AD7C60715AEF310008C3BC8 /* TestRelease */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -322,7 +355,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SYMROOT = ../../build;
 			};
-			name = Release;
+			name = TestRelease;
 		};
 /* End XCBuildConfiguration section */
 
@@ -331,19 +364,21 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A0CD54915AF0BCE00970505 /* Debug */,
-				1A0CD54A15AF0BCE00970505 /* Release */,
+				1A0CD54A15AF0BCE00970505 /* TestRelease */,
+				1A6A1C5B16175333005BB3B3 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = TestRelease;
 		};
 		1AD7C5F315AEF30F008C3BC8 /* Build configuration list for PBXProject "OoliteUnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AD7C60615AEF310008C3BC8 /* Debug */,
-				1AD7C60715AEF310008C3BC8 /* Release */,
+				1AD7C60715AEF310008C3BC8 /* TestRelease */,
+				1A6A1C5A16175333005BB3B3 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = TestRelease;
 		};
 /* End XCConfigurationList section */
 	};
