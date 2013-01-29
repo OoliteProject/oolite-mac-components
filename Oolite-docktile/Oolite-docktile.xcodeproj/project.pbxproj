@@ -26,7 +26,7 @@
 		1A60EE7811B82D8100224F2D /* OODockTilePlugIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OODockTilePlugIn.m; sourceTree = "<group>"; };
 		1A60EE8B11B82EA200224F2D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/OODockTilePlugIn.xib; sourceTree = "<group>"; };
 		1A60EEA011B832A100224F2D /* NSFileManagerOOExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSFileManagerOOExtensions.h; path = ../../src/Core/NSFileManagerOOExtensions.h; sourceTree = SOURCE_ROOT; };
-		1AE38EC215C3FEED000709CA /* oolite-targets.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = "oolite-targets.xcconfig"; path = "../../src/Cocoa/oolite-targets.xcconfig"; sourceTree = "<group>"; };
+		1AE38EC215C3FEED000709CA /* oolite-targets.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "oolite-targets.xcconfig"; path = "../../src/Cocoa/oolite-targets.xcconfig"; sourceTree = "<group>"; };
 		32DBCF630370AF2F00C91783 /* Oolite-docktile_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Oolite-docktile_Prefix.pch"; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* Oolite.docktileplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Oolite.docktileplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -240,8 +240,6 @@
 				);
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Oolite-docktile_Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -269,8 +267,6 @@
 				);
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Oolite-docktile_Prefix.pch";
@@ -299,8 +295,6 @@
 				);
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Oolite-docktile_Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
