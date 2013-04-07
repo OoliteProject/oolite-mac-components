@@ -16,6 +16,9 @@
 		1AB2D62B15B86F1100177AAF /* OOWeakReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2D62815B86F1100177AAF /* OOWeakReference.m */; };
 		1AB2D62C15B86F1100177AAF /* OOWeakSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2D62A15B86F1100177AAF /* OOWeakSet.m */; };
 		1AB2D62F15B86F8000177AAF /* WeakSetUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2D62E15B86F8000177AAF /* WeakSetUnitTests.m */; };
+		1AFE04F01711E8A0005576F0 /* ShipEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFE04EF1711E8A0005576F0 /* ShipEntity.m */; };
+		1AFE04F31711E8EA005576F0 /* OOShipGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFE04F21711E8EA005576F0 /* OOShipGroup.m */; };
+		1AFE04F61711EC0B005576F0 /* OOShipGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFE04F51711EC0A005576F0 /* OOShipGroupTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,12 @@
 		1AB2D62E15B86F8000177AAF /* WeakSetUnitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakSetUnitTests.m; sourceTree = "<group>"; };
 		1AD7C5FD15AEF310008C3BC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1AF4AF5A15B861E3009243BE /* oolite-targets.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "oolite-targets.xcconfig"; path = "src/Cocoa/oolite-targets.xcconfig"; sourceTree = "<group>"; };
+		1AFE04EE1711E8A0005576F0 /* ShipEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShipEntity.h; path = OoliteUnitTests/ShipEntity.h; sourceTree = "<group>"; };
+		1AFE04EF1711E8A0005576F0 /* ShipEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShipEntity.m; path = OoliteUnitTests/ShipEntity.m; sourceTree = "<group>"; };
+		1AFE04F11711E8EA005576F0 /* OOShipGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOShipGroup.h; path = src/Core/OOShipGroup.h; sourceTree = "<group>"; };
+		1AFE04F21711E8EA005576F0 /* OOShipGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOShipGroup.m; path = src/Core/OOShipGroup.m; sourceTree = "<group>"; };
+		1AFE04F41711EC0A005576F0 /* OOShipGroupTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OOShipGroupTests.h; sourceTree = "<group>"; };
+		1AFE04F51711EC0A005576F0 /* OOShipGroupTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OOShipGroupTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +84,8 @@
 				1AB2D62E15B86F8000177AAF /* WeakSetUnitTests.m */,
 				1A5748DD15E96088005D1D8A /* OOIsNumberLiteralTests.h */,
 				1A5748DE15E96088005D1D8A /* OOIsNumberLiteralTests.m */,
+				1AFE04F41711EC0A005576F0 /* OOShipGroupTests.h */,
+				1AFE04F51711EC0A005576F0 /* OOShipGroupTests.m */,
 			);
 			name = "Unit tests";
 			path = OoliteUnitTests;
@@ -107,6 +118,7 @@
 				1A0CD53F15AF0BCE00970505 /* Unit tests */,
 				1AB2D63015B86F9700177AAF /* Helpers */,
 				1AF4AF5C15B86251009243BE /* Oolite parts */,
+				1AFE04ED1711E844005576F0 /* Mocks */,
 				1A0CD54015AF0BCE00970505 /* Supporting Files */,
 				1AD7C5FC15AEF310008C3BC8 /* Frameworks */,
 				1AD7C5FA15AEF310008C3BC8 /* Products */,
@@ -143,9 +155,20 @@
 				1AB2D62A15B86F1100177AAF /* OOWeakSet.m */,
 				1A5748E115E960A5005D1D8A /* OOIsNumberLiteral.h */,
 				1A5748E215E960A5005D1D8A /* OOIsNumberLiteral.m */,
+				1AFE04F11711E8EA005576F0 /* OOShipGroup.h */,
+				1AFE04F21711E8EA005576F0 /* OOShipGroup.m */,
 			);
 			name = "Oolite parts";
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		1AFE04ED1711E844005576F0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				1AFE04EE1711E8A0005576F0 /* ShipEntity.h */,
+				1AFE04EF1711E8A0005576F0 /* ShipEntity.m */,
+			);
+			name = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +257,9 @@
 				1AB2D62F15B86F8000177AAF /* WeakSetUnitTests.m in Sources */,
 				1A5748DF15E96088005D1D8A /* OOIsNumberLiteralTests.m in Sources */,
 				1A5748E315E960A5005D1D8A /* OOIsNumberLiteral.m in Sources */,
+				1AFE04F01711E8A0005576F0 /* ShipEntity.m in Sources */,
+				1AFE04F31711E8EA005576F0 /* OOShipGroup.m in Sources */,
+				1AFE04F61711EC0B005576F0 /* OOShipGroupTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
