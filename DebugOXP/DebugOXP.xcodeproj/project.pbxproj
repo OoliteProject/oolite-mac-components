@@ -58,6 +58,13 @@
 			remoteGlobalIDString = 0865432206B8447D000CA0AB;
 			remoteInfo = Oolite;
 		};
+		1A93547117353D98005B1C2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1ABFEE3C10507C5C005AA752 /* Oolite.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0865423506B8447D000CA0AB;
+			remoteInfo = Oolite;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -336,6 +343,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1A93547217353D98005B1C2A /* PBXTargetDependency */,
 			);
 			name = DebugOXP;
 			productInstallPath = "$(HOME)/Library/Bundles";
@@ -448,6 +456,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A93547217353D98005B1C2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Oolite;
+			targetProxy = 1A93547117353D98005B1C2A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1A06F2701196E51A00AFA5B4 /* OODebugSoundInspector.xib */ = {
