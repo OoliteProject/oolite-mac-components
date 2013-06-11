@@ -17,6 +17,15 @@ This code is hereby placed in the public domain.
 
 @implementation weaksetUnitTests
 
+- (void) tearDown
+{
+	/*	Workaround for a stupid bug in ocunit where it sometimes exits before
+		it finishes logging results.
+	*/
+	[super tearDown];
+	[NSThread sleepForTimeInterval:0.5];
+}
+
 - (void) testAddAndCount
 {
     OOWeakTestObject *three = [OOWeakTestObject objectWithValue:3];
