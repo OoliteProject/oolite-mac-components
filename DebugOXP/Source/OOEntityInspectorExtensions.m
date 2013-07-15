@@ -127,7 +127,7 @@ SOFTWARE.
 
 - (NSString *) inspPositionLine
 {
-	Vector v = [self position];
+	HPVector v = [self position];
 	return [NSString stringWithFormat:@"%.0f, %.0f, %.0f", v.x, v.y, v.z];
 }
 
