@@ -134,7 +134,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		089C166AFE841209C02AAC07 /* DebugOXP */ = {
+		089C166AFE841209C02AAC07 /* DebugBundle */ = {
 			isa = PBXGroup;
 			children = (
 				1A846BAB0D79F9680081280D /* oolite-version.xcconfig */,
@@ -145,7 +145,7 @@
 				19C28FB8FE9D52D311CA2CBB /* Products */,
 				1ABFEE3C10507C5C005AA752 /* Oolite.xcodeproj */,
 			);
-			name = DebugOXP;
+			name = DebugBundle;
 			sourceTree = "<group>";
 		};
 		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
@@ -308,7 +308,7 @@
 			);
 			name = "Debug Bundle";
 			productInstallPath = "$(HOME)/Library/Bundles";
-			productName = DebugOXP;
+			productName = DebugBundle;
 			productReference = 8D5B49B6048680CD000E48DA /* Debug.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
@@ -321,7 +321,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "the Oolite team";
 			};
-			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "DebugOXP" */;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "DebugBundle" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -331,7 +331,7 @@
 				French,
 				German,
 			);
-			mainGroup = 089C166AFE841209C02AAC07 /* DebugOXP */;
+			mainGroup = 089C166AFE841209C02AAC07 /* DebugBundle */;
 			projectDirPath = "";
 			projectReferences = (
 				{
@@ -567,7 +567,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = TestRelease;
 		};
-		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "DebugOXP" */ = {
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "DebugBundle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB913F08733D840010E9CD /* Debug */,
