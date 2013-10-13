@@ -3,7 +3,7 @@
 OODebugSoundInspector.m
 
 
-Oolite Debug OXP
+Oolite Debug Bundle
 
 Copyright © 2007-2013 Jens Ayton
 
@@ -41,7 +41,7 @@ SOFTWARE.
 	{
 		if (![NSBundle loadNibNamed:@"OODebugSoundInspector" owner:self])
 		{
-			OOLog(@"debugOXP.load.soundInspector.failed", @"Failed to load sound inspector nib.");
+			OOLog(@"debugSupport.load.soundInspector.failed", @"Failed to load sound inspector nib.");
 			DESTROY(self);
 		}
 		else  OOSoundRegisterDebugMonitor(self);

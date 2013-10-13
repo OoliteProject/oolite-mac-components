@@ -3,7 +3,7 @@
 OODebugSoundInspector.h
 
 
-Oolite Debug OXP
+Oolite Debug Bundle
 
 Copyright © 2007-2013 Jens Ayton
 

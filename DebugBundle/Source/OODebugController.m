@@ -3,7 +3,7 @@
 OODebugController.m
 
 
-Oolite Debug OXP
+Oolite Debug Bundle
 
 Copyright (C) 2007-2010 Jens Ayton
 
@@ -81,7 +81,7 @@ static OODebugController *sSingleton = nil;
 		nibPath = [self pathForResource:@"OODebugController" ofType:@"nib"];
 		if (nibPath == nil)
 		{
-			OOLog(@"debugOXP.load.failed", @"Could not find OODebugController.nib.");
+			OOLog(@"debugSupport.load.failed", @"Could not find OODebugController.nib.");
 			[self release];
 			self = nil;
 		}
@@ -91,7 +91,7 @@ static OODebugController *sSingleton = nil;
 			
 			[self insertDebugMenu];
 			[self setUpLogMessageClassMenu];
-			OOLog(@"debugOXP.load.success", @"Debug OXP loaded successfully.");
+			OOLog(@"debugSupport.load.success", @"Debug Bundle loaded successfully.");
 		}
 	}
 	

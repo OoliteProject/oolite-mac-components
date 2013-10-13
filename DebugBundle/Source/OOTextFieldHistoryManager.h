@@ -5,7 +5,7 @@ OOTextFieldHistoryManager.h
 Text field delegate to manage input history.
 
 
-Oolite Debug OXP
+Oolite Debug Bundle
 
 Copyright (C) 2007 Jens Ayton
 
