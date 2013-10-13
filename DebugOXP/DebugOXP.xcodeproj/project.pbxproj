@@ -41,10 +41,14 @@
 		1A57300E0D84C10F003D4A26 /* OOEntityInspectorExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A57300C0D84C10F003D4A26 /* OOEntityInspectorExtensions.h */; };
 		1A57300F0D84C10F003D4A26 /* OOEntityInspectorExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A57300D0D84C10F003D4A26 /* OOEntityInspectorExtensions.m */; };
 		1A5730A10D84D0C3003D4A26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A57309F0D84D0C3003D4A26 /* Localizable.strings */; };
+		1A7E39F3180AC51300576095 /* RBSplitSubview.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7E39EE180AC51300576095 /* RBSplitSubview.h */; };
+		1A7E39F4180AC51300576095 /* RBSplitSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7E39EF180AC51300576095 /* RBSplitSubview.m */; };
+		1A7E39F5180AC51300576095 /* RBSplitView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7E39F0180AC51300576095 /* RBSplitView.h */; };
+		1A7E39F6180AC51300576095 /* RBSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7E39F1180AC51300576095 /* RBSplitView.m */; settings = {COMPILER_FLAGS = "-Wno-tautological-compare"; }; };
+		1A7E39F7180AC51300576095 /* RBSplitViewPrivateDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7E39F2180AC51300576095 /* RBSplitViewPrivateDefines.h */; };
 		1A909C880F3C6BBB003AE160 /* OOShipGroupDebugInspectorModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A909C860F3C6BBB003AE160 /* OOShipGroupDebugInspectorModule.h */; };
 		1A909C890F3C6BBB003AE160 /* OOShipGroupDebugInspectorModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A909C870F3C6BBB003AE160 /* OOShipGroupDebugInspectorModule.m */; };
 		1A909C940F3C6DCA003AE160 /* OOShipGroupDebugInspectorModule.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A909C920F3C6DCA003AE160 /* OOShipGroupDebugInspectorModule.xib */; };
-		1A98BC4510C1E95E000F1F56 /* RBSplitView-shim.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A98BC4410C1E95E000F1F56 /* RBSplitView-shim.m */; settings = {COMPILER_FLAGS = "-Wno-extra -Wno-tautological-compare"; }; };
 		1AD26BF90C8434AB00B4BFD1 /* OOTextFieldHistoryManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD26BF70C8434AB00B4BFD1 /* OOTextFieldHistoryManager.h */; };
 		1AD26BFA0C8434AB00B4BFD1 /* OOTextFieldHistoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD26BF80C8434AB00B4BFD1 /* OOTextFieldHistoryManager.m */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
@@ -145,11 +149,15 @@
 		1A57300C0D84C10F003D4A26 /* OOEntityInspectorExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OOEntityInspectorExtensions.h; sourceTree = "<group>"; };
 		1A57300D0D84C10F003D4A26 /* OOEntityInspectorExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OOEntityInspectorExtensions.m; sourceTree = "<group>"; };
 		1A5730A00D84D0C3003D4A26 /* English */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 10; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1A7E39EE180AC51300576095 /* RBSplitSubview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSplitSubview.h; sourceTree = "<group>"; };
+		1A7E39EF180AC51300576095 /* RBSplitSubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSplitSubview.m; sourceTree = "<group>"; };
+		1A7E39F0180AC51300576095 /* RBSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSplitView.h; sourceTree = "<group>"; };
+		1A7E39F1180AC51300576095 /* RBSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSplitView.m; sourceTree = "<group>"; };
+		1A7E39F2180AC51300576095 /* RBSplitViewPrivateDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSplitViewPrivateDefines.h; sourceTree = "<group>"; };
 		1A846BAB0D79F9680081280D /* oolite-version.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "oolite-version.xcconfig"; path = "../../src/Cocoa/oolite-version.xcconfig"; sourceTree = SOURCE_ROOT; };
 		1A909C860F3C6BBB003AE160 /* OOShipGroupDebugInspectorModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OOShipGroupDebugInspectorModule.h; sourceTree = "<group>"; };
 		1A909C870F3C6BBB003AE160 /* OOShipGroupDebugInspectorModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OOShipGroupDebugInspectorModule.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1A909C930F3C6DCA003AE160 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/OOShipGroupDebugInspectorModule.xib; sourceTree = "<group>"; };
-		1A98BC4410C1E95E000F1F56 /* RBSplitView-shim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RBSplitView-shim.m"; sourceTree = "<group>"; };
 		1ABFEE3C10507C5C005AA752 /* Oolite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Oolite.xcodeproj; path = ../../Oolite.xcodeproj; sourceTree = SOURCE_ROOT; };
 		1AD26BF70C8434AB00B4BFD1 /* OOTextFieldHistoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OOTextFieldHistoryManager.h; sourceTree = "<group>"; };
 		1AD26BF80C8434AB00B4BFD1 /* OOTextFieldHistoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OOTextFieldHistoryManager.m; sourceTree = "<group>"; };
@@ -255,7 +263,7 @@
 				1A06F2901196E69500AFA5B4 /* OODebugSoundInspector.h */,
 				1A06F2911196E69500AFA5B4 /* OODebugSoundInspector.m */,
 				1A572FFA0D84BAB9003D4A26 /* Inspector */,
-				1A98BC4410C1E95E000F1F56 /* RBSplitView-shim.m */,
+				1A7E39ED180AC51300576095 /* RBSplitView */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -303,6 +311,18 @@
 			name = Inspector;
 			sourceTree = "<group>";
 		};
+		1A7E39ED180AC51300576095 /* RBSplitView */ = {
+			isa = PBXGroup;
+			children = (
+				1A7E39EE180AC51300576095 /* RBSplitSubview.h */,
+				1A7E39EF180AC51300576095 /* RBSplitSubview.m */,
+				1A7E39F0180AC51300576095 /* RBSplitView.h */,
+				1A7E39F1180AC51300576095 /* RBSplitView.m */,
+				1A7E39F2180AC51300576095 /* RBSplitViewPrivateDefines.h */,
+			);
+			path = RBSplitView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -321,6 +341,9 @@
 				1A0CF1B10D89FD7700E0B568 /* OOAIDebugInspectorModule.h in Headers */,
 				1A909C880F3C6BBB003AE160 /* OOShipGroupDebugInspectorModule.h in Headers */,
 				1A06F2921196E69500AFA5B4 /* OODebugSoundInspector.h in Headers */,
+				1A7E39F3180AC51300576095 /* RBSplitSubview.h in Headers */,
+				1A7E39F5180AC51300576095 /* RBSplitView.h in Headers */,
+				1A7E39F7180AC51300576095 /* RBSplitViewPrivateDefines.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,8 +473,9 @@
 				1A2DFBCC0D894A1D0055CF71 /* OOShipDebugInspectorModule.m in Sources */,
 				1A0CF1B20D89FD7700E0B568 /* OOAIDebugInspectorModule.m in Sources */,
 				1A909C890F3C6BBB003AE160 /* OOShipGroupDebugInspectorModule.m in Sources */,
-				1A98BC4510C1E95E000F1F56 /* RBSplitView-shim.m in Sources */,
 				1A06F2931196E69500AFA5B4 /* OODebugSoundInspector.m in Sources */,
+				1A7E39F4180AC51300576095 /* RBSplitSubview.m in Sources */,
+				1A7E39F6180AC51300576095 /* RBSplitView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
