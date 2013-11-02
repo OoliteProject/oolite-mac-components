@@ -37,6 +37,10 @@ SOFTWARE.
 
 - (id) init
 {
+#if OOLITE_OPENAL
+	[self release];
+	return nil;
+#else
 	if ((self = [super init]))
 	{
 		if (![NSBundle loadNibNamed:@"OODebugSoundInspector" owner:self])
@@ -44,10 +48,14 @@ SOFTWARE.
 			OOLog(@"debugSupport.load.soundInspector.failed", @"Failed to load sound inspector nib.");
 			DESTROY(self);
 		}
-		else  OOSoundRegisterDebugMonitor(self);
+		else
+		{
+			OOSoundRegisterDebugMonitor(self);
+		}
 	}
 	
 	return self;
+#endif
 }
 
 
