@@ -287,7 +287,6 @@
 				GCC_PREFIX_HEADER = "OoliteUnitTests/OoliteUnitTests-Prefix.pch";
 				INFOPLIST_FILE = "OoliteUnitTests/OoliteUnitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = YES;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -302,7 +301,6 @@
 				GCC_PREFIX_HEADER = "OoliteUnitTests/OoliteUnitTests-Prefix.pch";
 				INFOPLIST_FILE = "OoliteUnitTests/OoliteUnitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = YES;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = TestRelease;
@@ -335,7 +333,6 @@
 				GCC_PREFIX_HEADER = "OoliteUnitTests/OoliteUnitTests-Prefix.pch";
 				INFOPLIST_FILE = "OoliteUnitTests/OoliteUnitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = YES;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Deployment;
