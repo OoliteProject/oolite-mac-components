@@ -10,9 +10,9 @@
 		1A1AB0E80909B67E001039FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1AB0E70909B67E001039FA /* Foundation.framework */; };
 		1A21AE83118CD0A800D4D137 /* OoliteImporterPrefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A21AE82118CD0A800D4D137 /* OoliteImporterPrefix.h */; };
 		1A3E01D911C57598000FF226 /* NSScannerOOExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A3E01D711C57598000FF226 /* NSScannerOOExtensions.h */; };
-		1A3E01DA11C57598000FF226 /* NSScannerOOExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E01D811C57598000FF226 /* NSScannerOOExtensions.m */; };
+		1A3E01DA11C57598000FF226 /* NSScannerOOExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E01D811C57598000FF226 /* NSScannerOOExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1A3E01DD11C5759E000FF226 /* OOCollectionExtractors.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A3E01DB11C5759E000FF226 /* OOCollectionExtractors.h */; };
-		1A3E01DE11C5759E000FF226 /* OOCollectionExtractors.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E01DC11C5759E000FF226 /* OOCollectionExtractors.m */; };
+		1A3E01DE11C5759E000FF226 /* OOCollectionExtractors.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E01DC11C5759E000FF226 /* OOCollectionExtractors.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1A69FD68090A3BC600914D59 /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = C88FB7D7067446EC006EBB30 /* schema.xml */; };
 		1AADEB2E09169CCB00B6D1FA /* Values.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AADEB2D09169CCB00B6D1FA /* Values.plist */; };
 		2C05A19C06CAA52B00D84F6F /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C05A19B06CAA52B00D84F6F /* GetMetadataForFile.m */; };
@@ -282,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A1966F5104EC4880079B400 /* oolite-targets.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 			};
 			name = TestRelease;
 		};
@@ -330,6 +331,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A1966F5104EC4880079B400 /* oolite-targets.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
@@ -384,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A1966F5104EC4880079B400 /* oolite-targets.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 			};
 			name = Deployment;
 		};

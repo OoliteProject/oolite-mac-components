@@ -30,23 +30,26 @@ MA 02110-1301, USA.
 #import "OOCollectionExtractors.h"
 
 
+#define kTitle				(NSString *)kMDItemTitle
+#define kAuthors			(NSString *)kMDItemAuthors
+#define kVersion			(NSString *)kMDItemVersion
+#define kCopyright			(NSString *)kMDItemCopyright
+#define kIdentifier			(NSString *)kMDItemIdentifier
+#define kDescription		(NSString *)kMDItemDescription
+#define kURL				(NSString *)kMDItemURL
+#define kTextContent		(NSString *)kMDItemTextContent
 #define kShipIDs			@"org_aegidian_oolite_shipids"
 #define kShipClassNames		@"org_aegidian_oolite_shipclassnames"
 #define kShipRoles			@"org_aegidian_oolite_shiproles"
 #define kShipModels			@"org_aegidian_oolite_shipmodels"
 #define kCombatRating		@"org_aegidian_oolite_combatrating"
 #define kSystemName			@"org_aegidian_oolite_systemname"
-#define kMinVersion			@"org_aegidian_oolite_minversion"
-#define kMaxVersion			@"org_aegidian_oolite_maxversion"
-
-#if MAC_OS_X_VERSION_MAX_ALLOWED < 1050
-#define kMDItemURL			@"kMDItemURL"
-#define kMDItemSupportFileType	@"kMDItemSupportFileType"
-#endif
+#define kMinOoliteVersion	@"org_aegidian_oolite_minversion"
+#define kMaxOoliteVersion	@"org_aegidian_oolite_maxversion"
 
 
-static BOOL GetMetadataForSaveFile(void* thisInterface, NSMutableDictionary *attributes, NSString *pathToFile);
-static BOOL GetMetadataForOXP(void* thisInterface, NSMutableDictionary *attributes, NSString *pathToFile);
+static bool GetMetadataForSaveFile(void *thisInterface, NSMutableDictionary *attributes, NSString *pathToFile);
+static bool GetMetadataForOXP(void *thisInterface, NSMutableDictionary *attributes, NSString *pathToFile);
 
 static id GetBundlePropertyList(NSString *inPListName);
 static NSDictionary *ConfigDictionary(NSString *basePath, NSString *name);
@@ -61,175 +64,155 @@ static NSMutableArray *ScanTokensFromString(NSString *values);
 	NOTE: this prototype differs from the one declared in main.c (which is mostly unmodified
 	Apple boilerplate code), but the types are entirely compatible.
 */
-BOOL GetMetadataForFile(void* thisInterface, 
+BOOL GetMetadataForFile(void *thisInterface,
 			   NSMutableDictionary *attributes, 
-			   NSString *contentTypeUTI,
+			   CFStringRef contentTypeUTI,
 			   NSString *pathToFile)
 {
-	NSAutoreleasePool		*pool;
-	BOOL					result = NO;
-	
-	pool = [[NSAutoreleasePool alloc] init];
-	
-	@try
+	@autoreleasepool
 	{
-		if ([contentTypeUTI isEqual:@"org.aegidian.oolite.save"])
+		@try
 		{
-			result = GetMetadataForSaveFile(thisInterface, attributes, pathToFile);
-		}
-		else if ([contentTypeUTI isEqual:@"org.aegidian.oolite.oxp"])
-		{
-			result = GetMetadataForOXP(thisInterface, attributes, pathToFile);
-		}
-	}
-	@catch (id any) {}
-	
-	[pool release];
-	return result;
-}
-
-static BOOL GetMetadataForSaveFile(void* thisInterface, NSMutableDictionary *attributes, NSString *pathToFile)
-{
-	BOOL					ok = NO;
-	NSDictionary			*content;
-	id						value;
-	NSInteger				killCount;
-	
-	content = [NSDictionary dictionaryWithContentsOfFile:pathToFile];			
-	if (nil != content)
-	{
-		ok = YES;
-		
-		value = [content oo_stringForKey:@"player_name"];
-		if (nil != value)  [attributes setObject:value forKey:(NSString *)kMDItemTitle];
-		
-		value = [content oo_stringForKey:@"ship_desc"];
-		if (nil != value)  [attributes setObject:[NSArray arrayWithObject:value] forKey:kShipIDs];
-		
-		value = [content oo_stringForKey:@"ship_name"];
-		if (nil != value)  [attributes setObject:[NSArray arrayWithObject:value] forKey:kShipClassNames];
-		
-		value = [content oo_stringForKey:@"current_system_name"];
-		if (nil != value)  [attributes setObject:value forKey:kSystemName];
-		
-		value = [content oo_arrayForKey:@"comm_log"];
-		if (0 != [value count])  [attributes setObject:[value componentsJoinedByString:@"\n"] forKey:(NSString *)kMDItemTextContent];
-		
-		killCount = [content oo_integerForKey:@"ship_kills"];
-		if (killCount > 0)
-		{
-			NSArray					*ratings;
-			int						rating = 0;
-			int						kills[8] = { 0x0008,  0x0010,  0x0020,  0x0040,  0x0080,  0x0200,  0x0A00,  0x1900 };
-			
-			ratings = [GetBundlePropertyList(@"Values") objectForKey:@"ratings"];
-			if (nil != ratings)
+			if (UTTypeConformsTo(contentTypeUTI, CFSTR("org.aegidian.oolite.save")))
 			{
-				while ((rating < 8) && (kills[rating] <= killCount))
-				{
-					rating ++;
-				}
-				
-				[attributes setObject:[ratings oo_stringAtIndex:rating] forKey:kCombatRating];
+				return GetMetadataForSaveFile(thisInterface, attributes, pathToFile);
+			}
+			if (UTTypeConformsTo(contentTypeUTI, CFSTR("org.aegidian.oolite.oxp")))
+			{
+				return GetMetadataForOXP(thisInterface, attributes, pathToFile);
 			}
 		}
+		@catch (id any)
+		{
+			return false;
+		}
+	}
+}
+
+static bool GetMetadataForSaveFile(void *thisInterface, NSMutableDictionary *attributes, NSString *pathToFile)
+{
+	NSDictionary *content = [NSDictionary dictionaryWithContentsOfFile:pathToFile];
+	if (content == nil)  return false;
+	
+	NSString *playerName = [content oo_stringForKey:@"player_name"];
+	if (playerName != nil)  attributes[kTitle] = playerName;
+	
+	NSString *shipDesc = [content oo_stringForKey:@"ship_desc"];
+	if (shipDesc != nil)  attributes[kShipIDs] = shipDesc;
+	
+	NSString *shipName = [content oo_stringForKey:@"ship_name"];
+	if (shipName != nil)  attributes[kShipClassNames] = shipName;
+	
+	NSString *currentSystemName = [content oo_stringForKey:@"current_system_name"];
+	if (currentSystemName != nil)  attributes[kSystemName] = currentSystemName;
+	
+	NSArray *commLog = [content oo_arrayForKey:@"comm_log"];
+	if (commLog.count != 0)  attributes[kTextContent] = [commLog componentsJoinedByString:@"\n"];
+	
+	NSInteger killCount = [content oo_integerForKey:@"ship_kills"];
+	if (killCount > 0)
+	{
+		NSArray *ratings = GetBundlePropertyList(@"Values")[@"ratings"];
+		if (ratings != nil)
+		{
+			int rating = 0;
+			const int kRequiredKills[8] = { 0x0008,  0x0010,  0x0020,  0x0040,  0x0080,  0x0200,  0x0A00,  0x1900 };
+			
+			while (rating < 8 && kRequiredKills[rating] <= killCount)
+			{
+				rating ++;
+			}
+			
+			attributes[kCombatRating] = ratings[rating];
+		}
 	}
 	
-	return ok;
+	return true;
 }
 
 
-static BOOL GetMetadataForOXP(void* thisInterface, NSMutableDictionary *attributes, NSString *pathToFile)
+static bool GetMetadataForOXP(void *thisInterface, NSMutableDictionary *attributes, NSString *pathToFile)
 {
-	NSDictionary			*requires = nil;
-	NSDictionary			*shipData = nil;
-	NSDictionary			*shipDataOverrides = nil;
-	NSDictionary			*manifest = nil;
-	NSEnumerator			*shipEnum = nil;
-	NSDictionary			*ship = nil;
-	NSString				*string = nil;
-	NSMutableSet			*names = nil, *models = nil, *roles = nil;
-	CFIndex					count;
-	id						object = nil;
-	
-	requires = ConfigDictionary(pathToFile, @"requires.plist");
-	if (requires != nil)
-	{
-		string = [requires objectForKey:@"version"];
-		if (string != nil) [attributes setObject:string forKey:kMinVersion];
-		
-		string = [requires objectForKey:@"max_version"];
-		if (string != nil) [attributes setObject:string forKey:kMaxVersion];
-	}
-	
-	shipData = ConfigDictionary(pathToFile, @"shipdata.plist");
-	shipDataOverrides = ConfigDictionary(pathToFile, @"shipdata-overrides.plist");
-	shipData = MergeShipData(shipData, shipDataOverrides);
-	
-	count = [shipData count];
-	if (count != 0)
-	{
-		names = [NSMutableSet setWithCapacity:count];
-		models = [NSMutableSet setWithCapacity:count];
-		roles = [NSMutableSet set];
-		
-		[attributes setObject:[shipData allKeys] forKey:kShipIDs];
-		
-		for (shipEnum = [shipData objectEnumerator]; (ship = [shipEnum nextObject]); )
-		{
-			if (![ship isKindOfClass:[NSDictionary class]])  continue;
-			
-			string = [ship oo_stringForKey:@"name"];
-			if (string != nil)  [names addObject:string];
-			
-			string = [ship oo_stringForKey:@"model"];
-			if (string != nil)  [models addObject:string];
-			
-			string = [ship oo_stringForKey:@"roles"];
-			if (string != nil)  [roles addObjectsFromArray:[OOParseRolesFromString(string) allKeys]];
-		}
-		
-		if (0 != [names count]) [attributes setObject:[names allObjects] forKey:kShipClassNames];
-		if (0 != [models count]) [attributes setObject:[models allObjects] forKey:kShipModels];
-		if (0 != [roles count]) [attributes setObject:[roles allObjects] forKey:kShipRoles];
-	}
-	
-	// Semi-official metadata file, spec in progress.
-	manifest = ConfigDictionary(pathToFile, @"manifest.plist");
-	string = [manifest oo_stringForKey:@"version"];
-	if (string == nil)
-	{
-		// Not "officially" supported, but exists in some OXPs.
-		manifest = ConfigDictionary(pathToFile, @"Info.plist");
-		string = [manifest oo_stringForKey:@"CFBundleVersion"];
-	}
-	if (string != nil)
-	{
-		[attributes setObject:string forKey:(NSString *)kMDItemVersion];
-	}
-	
+	NSDictionary *manifest = ConfigDictionary(pathToFile, @"manifest.plist");
 	if (manifest != nil)
 	{
-		// Author: Spotlight wants array, we accept array or string.
-		object = [manifest objectForKey:@"author"];
-		if ([object isKindOfClass:[NSString class]])  object = [NSArray arrayWithObject:object];
-		if ([object isKindOfClass:[NSArray class]])  [attributes setObject:object forKey:(NSString *)kMDItemAuthors];
+		NSString *title = [manifest oo_stringForKey:@"title"];
+		if (title != nil)  attributes[kTitle] = title;
 		
-		string = [manifest oo_stringForKey:@"name"];
-		if (string != nil)  [attributes setObject:string forKey:(NSString *)kMDItemTitle];
+		NSString *identifier = [manifest oo_stringForKey:@"identifier"];
+		if (identifier != nil)  attributes[kIdentifier] = identifier;
 		
-		string = [manifest oo_stringForKey:@"copyright"];
-		if (string != nil)  [attributes setObject:string forKey:(NSString *)kMDItemCopyright];
+		NSString *version = [manifest oo_stringForKey:@"version"];
+		if (version != nil)  attributes[kVersion] = version;
 		
-		string = [manifest oo_stringForKey:@"identifier"];
-		if (string != nil)  [attributes setObject:string forKey:(NSString *)kMDItemIdentifier];
+		// Allow a string or array for author
+		id author = manifest[@"author"];
+		if ([author isKindOfClass:NSString.class])  author = @[author];
+		if ([author isKindOfClass:NSArray.class])  attributes[kAuthors] = author;
 		
-		string = [manifest oo_stringForKey:@"description"];
-		if (string != nil)  [attributes setObject:string forKey:(NSString *)kMDItemDescription];
+		NSString *description = [manifest oo_stringForKey:@"description"];
+		if (description != nil)  attributes[kDescription] = description;
 		
-		string = [manifest oo_stringForKey:@"info_url"];
-		if (string == nil)  string = [manifest oo_stringForKey:@"download_url"];
-		if (string != nil)  [attributes setObject:string forKey:(NSString *)kMDItemURL];
+		NSString *copyright = [manifest oo_stringForKey:@"copyright"];
+		if (copyright == nil)  copyright = [manifest oo_stringForKey:@"license"];
+		if (copyright != nil)  attributes[kCopyright] = copyright;
+		
+		NSString *url = [manifest oo_stringForKey:@"download_url"];
+		if (url == nil)  url = [manifest oo_stringForKey:@"information_url"];
+		if (url != nil)  attributes[kURL] = url;
+		
+		NSString *minVersion = [manifest oo_stringForKey:@"required_oolite_version"];
+		if (minVersion != nil)  attributes[kMinOoliteVersion] = minVersion;
+	}
+	else
+	{
+		// No manifest, look for requires.plist
+		
+		NSDictionary *requires = ConfigDictionary(pathToFile, @"requires.plist");
+		if (requires != nil)
+		{
+			NSString *minVersion = [requires objectForKey:@"version"];
+			if (minVersion != nil)  attributes[kMinOoliteVersion] = minVersion;
+			
+			NSString *maxVersion = [requires objectForKey:@"max_version"];
+			if (maxVersion != nil)  attributes[kMaxOoliteVersion] = maxVersion;
+		}
+		
+		// Not "officially" supported, but exists in some OXPs.
+		NSDictionary *infoPList = ConfigDictionary(pathToFile, @"Info.plist");
+		NSString *version = [infoPList oo_stringForKey:@"CFBundleVersion"];
+		if (version != nil)  attributes[kVersion] = version;
+	}
+	
+	NSDictionary *shipData = ConfigDictionary(pathToFile, @"shipdata.plist");
+	NSDictionary *shipDataOverrides = ConfigDictionary(pathToFile, @"shipdata-overrides.plist");
+	shipData = MergeShipData(shipData, shipDataOverrides);
+	
+	if (shipData.count != 0)
+	{
+		NSMutableSet *shipNames = [NSMutableSet setWithCapacity:shipData.count];
+		NSMutableSet *shipModels = [NSMutableSet setWithCapacity:shipData.count];
+		NSMutableSet *shipRoles = [NSMutableSet new];
+		
+		attributes[kShipIDs] = shipData.allKeys;
+		
+		for (NSDictionary *ship in shipData)
+		{
+			if (![ship isKindOfClass:NSDictionary.class])  continue;
+			
+			NSString *name = [ship oo_stringForKey:@"name"];
+			if (name != nil)  [shipNames addObject:name];
+			
+			NSString *model = [ship oo_stringForKey:@"model"];
+			if (model != nil)  [shipModels addObject:model];
+			
+			NSString *role = [ship oo_stringForKey:@"roles"];
+			if (role != nil)  [shipRoles addObjectsFromArray:OOParseRolesFromString(role).allKeys];
+		}
+		
+		attributes[kShipClassNames] = shipNames.allObjects;
+		attributes[kShipModels] = shipModels.allObjects;
+		attributes[kShipRoles] = shipRoles.allObjects;
 	}
 	
 	return YES;
@@ -241,13 +224,9 @@ static BOOL GetMetadataForOXP(void* thisInterface, NSMutableDictionary *attribut
 
 static id GetBundlePropertyList(NSString *inPListName)
 {
-	NSBundle				*bundle;
-	NSString				*path;
-	NSData					*data;
-	
-	bundle = [NSBundle bundleWithIdentifier:@"org.aegidian.oolite.md-importer"];
-	path = [bundle pathForResource:inPListName ofType:@"plist"];
-	data = [NSData dataWithContentsOfFile:path];
+	NSBundle *bundle = [NSBundle bundleWithIdentifier:@"org.aegidian.oolite.md-importer"];
+	NSString *path = [bundle pathForResource:inPListName ofType:@"plist"];
+	NSData *data = [NSData dataWithContentsOfFile:path];
 	return [NSPropertyListSerialization propertyListFromData:data mutabilityOption:NSPropertyListImmutable format:NULL errorDescription:NULL];
 }
 
@@ -255,28 +234,28 @@ static id GetBundlePropertyList(NSString *inPListName)
 static NSDictionary *ConfigDictionary(NSString *basePath, NSString *name)
 {
 	NSDictionary *content = [NSDictionary dictionaryWithContentsOfFile:[[basePath stringByAppendingPathComponent:@"Config"] stringByAppendingPathComponent:name]];
-	if (content == nil)  content = [NSDictionary dictionaryWithContentsOfFile:[basePath stringByAppendingPathComponent:name]];
+	if (content == nil)
+	{
+		content = [NSDictionary dictionaryWithContentsOfFile:[basePath stringByAppendingPathComponent:name]];
+	}
 	return content;
 }
 
 
 static NSDictionary *MergeShipData(NSDictionary *shipData, NSDictionary *shipDataOverrides)
 {
-	NSMutableDictionary		*mutableShipData = nil;
-	NSEnumerator			*keyEnum = nil;
-	NSString				*key = nil;
 	NSDictionary			*baseDict = nil;
 	NSDictionary			*overrideDict = nil;
 	
 	if (shipDataOverrides == nil)  return shipData;
 	if (shipData == nil)  return shipDataOverrides;
 	
-	mutableShipData = [NSMutableDictionary dictionaryWithDictionary:shipData];
-	for (keyEnum = [shipDataOverrides keyEnumerator]; key != nil; (key = [keyEnum nextObject]))
+	NSMutableDictionary *mutableShipData = [NSMutableDictionary dictionaryWithDictionary:shipData];
+	for (NSString *key in shipDataOverrides)
 	{
-		baseDict = [shipData objectForKey:key];
-		overrideDict = [shipDataOverrides objectForKey:key];
-		[mutableShipData setObject:MergeShipDataEntry(baseDict, overrideDict) forKey:key];
+		baseDict = [shipData oo_dictionaryForKey:key];
+		overrideDict = [shipDataOverrides oo_dictionaryForKey:key];
+		mutableShipData[key] = MergeShipDataEntry(baseDict, overrideDict);
 	}
 	
 	return mutableShipData;
@@ -285,11 +264,9 @@ static NSDictionary *MergeShipData(NSDictionary *shipData, NSDictionary *shipDat
 
 static NSDictionary *MergeShipDataEntry(NSDictionary *baseDict, NSDictionary *overrideDict)
 {
-	NSMutableDictionary		*mutableEntry = nil;
-	
 	if (baseDict == nil)  return overrideDict;
 	
-	mutableEntry = [NSMutableDictionary dictionaryWithDictionary:baseDict];
+	NSMutableDictionary *mutableEntry = [NSMutableDictionary dictionaryWithDictionary:baseDict];
 	[mutableEntry addEntriesFromDictionary:overrideDict];
 	
 	return mutableEntry;
@@ -329,11 +306,10 @@ static NSDictionary *OOParseRolesFromString(NSString *string)
 			[scanner scanString:@"(" intoString:NULL];
 			if (![scanner scanFloat:&probability])	probability = 1.0f;
 			// Ignore rest of string
-			
-			[scanner release];
 		}
 		
-		if (0 <= probability)
+		// shipKey roles start with [ so other roles can't
+		if (0 <= probability && ![role hasPrefix:@"["])
 		{
 			[result setObject:[NSNumber numberWithFloat:probability] forKey:role];
 		}
@@ -352,7 +328,7 @@ static NSMutableArray *ScanTokensFromString(NSString *values)
 	static NSCharacterSet	*space_set = nil;
 	
 	if (values == nil)  return [NSArray array];
-	if (space_set == nil) space_set = [[NSCharacterSet whitespaceAndNewlineCharacterSet] retain];
+	if (space_set == nil) space_set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
 	
 	result = [NSMutableArray array];
 	scanner = [NSScanner scannerWithString:values];
