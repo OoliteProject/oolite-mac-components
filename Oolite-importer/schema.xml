@@ -29,7 +29,7 @@
 				org_aegidian_oolite_systemname
             </displayattrs>
         </type>
-		<type name="org.aegidian.oolite.oxp">
+		<type name="org.aegidian.oolite.expansion">
 			<allattrs>
 				kMDItemTitle
 				kMDItemVersion

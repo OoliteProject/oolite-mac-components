@@ -28,6 +28,7 @@ MA 02110-1301, USA.
 #import <stdarg.h>
 #import "NSScannerOOExtensions.h"
 #import "OOCollectionExtractors.h"
+#import "NSDataOOExtensions.h"
 
 
 #define kTitle				(NSString *)kMDItemTitle
@@ -49,7 +50,7 @@ MA 02110-1301, USA.
 
 
 static bool GetMetadataForSaveFile(void *thisInterface, NSMutableDictionary *attributes, NSString *pathToFile);
-static bool GetMetadataForOXP(void *thisInterface, NSMutableDictionary *attributes, NSString *pathToFile);
+static bool GetMetadataForExpansionPack(void *thisInterface, NSMutableDictionary *attributes, NSString *pathToFile);
 
 static id GetBundlePropertyList(NSString *inPListName);
 static NSDictionary *ConfigDictionary(NSString *basePath, NSString *name);
@@ -77,9 +78,9 @@ BOOL GetMetadataForFile(void *thisInterface,
 			{
 				return GetMetadataForSaveFile(thisInterface, attributes, pathToFile);
 			}
-			if (UTTypeConformsTo(contentTypeUTI, CFSTR("org.aegidian.oolite.oxp")))
+			if (UTTypeConformsTo(contentTypeUTI, CFSTR("org.aegidian.oolite.expansion")))
 			{
-				return GetMetadataForOXP(thisInterface, attributes, pathToFile);
+				return GetMetadataForExpansionPack(thisInterface, attributes, pathToFile);
 			}
 		}
 		@catch (id any)
@@ -131,7 +132,7 @@ static bool GetMetadataForSaveFile(void *thisInterface, NSMutableDictionary *att
 }
 
 
-static bool GetMetadataForOXP(void *thisInterface, NSMutableDictionary *attributes, NSString *pathToFile)
+static bool GetMetadataForExpansionPack(void *thisInterface, NSMutableDictionary *attributes, NSString *pathToFile)
 {
 	NSDictionary *manifest = ConfigDictionary(pathToFile, @"manifest.plist");
 	if (manifest != nil)
@@ -233,12 +234,23 @@ static id GetBundlePropertyList(NSString *inPListName)
 
 static NSDictionary *ConfigDictionary(NSString *basePath, NSString *name)
 {
-	NSDictionary *content = [NSDictionary dictionaryWithContentsOfFile:[[basePath stringByAppendingPathComponent:@"Config"] stringByAppendingPathComponent:name]];
-	if (content == nil)
+	NSString *path = [[basePath stringByAppendingPathComponent:@"Config"] stringByAppendingPathComponent:name];
+	NSData *data = [NSData oo_dataWithOXZFile:path];
+	if (data == nil)
 	{
-		content = [NSDictionary dictionaryWithContentsOfFile:[basePath stringByAppendingPathComponent:name]];
+		path = [basePath stringByAppendingPathComponent:name];
+		data = [NSData oo_dataWithOXZFile:path];
 	}
-	return content;
+	if (data != nil)
+	{
+		id plist = [NSPropertyListSerialization propertyListWithData:data
+															 options:0
+															  format:NULL
+															   error:NULL];
+		if ([plist isKindOfClass:NSDictionary.class])  return plist;
+	}
+	
+	return nil;
 }
 
 
@@ -344,3 +356,16 @@ static NSMutableArray *ScanTokensFromString(NSString *values)
 	
 	return result;
 }
+
+
+/* Disable OOLog. The only logging in the importer at the time of writing is
+   "File not found" logging in NSDataOOExtensions, which is not an error. In
+   general, we are unlikely to want logging from the importer.
+ */
+void OOLogWithFunctionFileAndLine(NSString *inMessageClass, const char *inFunction, const char *inFile, unsigned long inLine, NSString *inFormat, ...)
+{
+	
+}
+
+
+NSString * const kOOLogFileNotFound = @"";
