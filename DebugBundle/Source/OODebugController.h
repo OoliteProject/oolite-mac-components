@@ -107,7 +107,7 @@ show them, set the preference debug-show-extra-menu-items:
 - (IBAction) toggleThisDebugFlagAction:sender;
 
 // Shader Mode submenu
-- (IBAction) setShaderModeToTag:sender;
+- (IBAction) setShaderModeToTag:(NSMenuItem *)sender;
 
 // Log Preferences window
 - (IBAction) showLogPreferencesAction:sender;

@@ -48,6 +48,7 @@ SOFTWARE.
 #import "OOConstToString.h"
 #import "OODebugFlags.h"
 #import "OOOpenGLExtensionManager.h"
+#import "OOConstToString.h"
 
 
 static OODebugController *sSingleton = nil;
@@ -313,11 +314,11 @@ static void SetDisplayLogMessagesInClassThroughJS(NSString *msgClass, BOOL displ
 }
 
 
-- (IBAction) setShaderModeToTag:sender
+- (IBAction) setShaderModeToTag:(NSMenuItem *)sender
 {
-	OOShaderSetting setting = (OOShaderSetting)[sender tag];
-	NSString *settingString = [OOStringFromShaderSetting(setting) escapedForJavaScriptLiteral];
-	NSString *command = [NSString stringWithFormat:@"console.shaderMode = \"%@\"", settingString];
+	OOGraphicsDetail detail = (OOGraphicsDetail)sender.tag;
+	NSString *detailString = [OOStringFromGraphicsDetail(detail) escapedForJavaScriptLiteral];
+	NSString *command = [NSString stringWithFormat:@"console.detailLevel = \"%@\"", detailString];
 	
 	[[OODebugMonitor sharedDebugMonitor] performJSConsoleCommand:command];
 }
@@ -448,10 +449,10 @@ static void SetDisplayLogMessagesInClassThroughJS(NSString *msgClass, BOOL displ
 	}
 	if (action == @selector(setShaderModeToTag:))
 	{
-		OOShaderSetting itemLevel = (OOShaderSetting)[menuItem tag];
+		OOGraphicsDetail itemLevel = (OOGraphicsDetail)menuItem.tag;
 		
-		[menuItem setState:[UNIVERSE shaderEffectsLevel] == itemLevel];
-		return itemLevel <= [[OOOpenGLExtensionManager sharedManager] maximumShaderSetting];
+		menuItem.state = (UNIVERSE.detailLevel == itemLevel);
+		return itemLevel <= OOOpenGLExtensionManager.sharedManager.maximumDetailLevel;
 	}
 	
 	return [self respondsToSelector:action];

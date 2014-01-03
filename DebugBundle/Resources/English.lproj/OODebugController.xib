@@ -174,23 +174,23 @@
                         <action selector="resetAndClearAction:" target="-2" id="11"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Shader Mode" id="244">
+                <menuItem title="Graphics Detail" id="244">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Shader Mode" id="245">
+                    <menu key="submenu" title="Graphics Detail" id="245">
                         <items>
-                            <menuItem title="Off" tag="1" id="246">
+                            <menuItem title="Minimum" id="246">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="setShaderModeToTag:" target="-2" id="249"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Simple" tag="2" id="247">
+                            <menuItem title="Normal Shaders" tag="1" id="247">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="setShaderModeToTag:" target="-2" id="250"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Full" tag="3" id="248">
+                            <menuItem title="Extra Detail" tag="2" id="248">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="setShaderModeToTag:" target="-2" id="251"/>
