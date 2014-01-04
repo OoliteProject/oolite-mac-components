@@ -218,12 +218,6 @@
                         <action selector="cleanUpInspectors:" target="-2" id="232"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Show Audio Monitor" keyEquivalent="a" id="258">
-                    <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
-                    <connections>
-                        <action selector="show:" target="257" id="259"/>
-                    </connections>
-                </menuItem>
                 <menuItem isSeparatorItem="YES" id="224">
                     <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                 </menuItem>
@@ -500,7 +494,6 @@ Gw
                 <autoresizingMask key="autoresizingMask"/>
             </view>
         </window>
-        <customObject id="257" customClass="OODebugSoundInspector"/>
         <customView id="273" userLabel="JS Console Input Field">
             <rect key="frame" x="0.0" y="0.0" width="482" height="47"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

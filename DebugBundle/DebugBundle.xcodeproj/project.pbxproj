@@ -10,9 +10,6 @@
 		1A0256260C7F0D7100F622D4 /* OOJavaScriptConsoleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0256240C7F0D7100F622D4 /* OOJavaScriptConsoleController.m */; };
 		1A02587D0C7F36CD00F622D4 /* OODebugUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A02587B0C7F36CD00F622D4 /* OODebugUtilities.m */; };
 		1A0518D30C7CC69600BA5CCA /* OODebugController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0518D20C7CC69600BA5CCA /* OODebugController.m */; };
-		1A06F2721196E51A00AFA5B4 /* OODebugSoundInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A06F2701196E51A00AFA5B4 /* OODebugSoundInspector.xib */; };
-		1A06F2921196E69500AFA5B4 /* OODebugSoundInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A06F2901196E69500AFA5B4 /* OODebugSoundInspector.h */; };
-		1A06F2931196E69500AFA5B4 /* OODebugSoundInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A06F2911196E69500AFA5B4 /* OODebugSoundInspector.m */; };
 		1A0CF1B10D89FD7700E0B568 /* OOAIDebugInspectorModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0CF1AF0D89FD7700E0B568 /* OOAIDebugInspectorModule.h */; };
 		1A0CF1B20D89FD7700E0B568 /* OOAIDebugInspectorModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0CF1B00D89FD7700E0B568 /* OOAIDebugInspectorModule.m */; };
 		1A0CF1B70D89FD9A00E0B568 /* OOAIDebugInspectorModule.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0CF1B50D89FD9A00E0B568 /* OOAIDebugInspectorModule.xib */; };
@@ -77,9 +74,6 @@
 		1A02587B0C7F36CD00F622D4 /* OODebugUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OODebugUtilities.m; sourceTree = "<group>"; };
 		1A0518D10C7CC69600BA5CCA /* OODebugController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = OODebugController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1A0518D20C7CC69600BA5CCA /* OODebugController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OODebugController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		1A06F2711196E51A00AFA5B4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/OODebugSoundInspector.xib; sourceTree = "<group>"; };
-		1A06F2901196E69500AFA5B4 /* OODebugSoundInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = OODebugSoundInspector.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		1A06F2911196E69500AFA5B4 /* OODebugSoundInspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OODebugSoundInspector.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1A0CF1AF0D89FD7700E0B568 /* OOAIDebugInspectorModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = OOAIDebugInspectorModule.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1A0CF1B00D89FD7700E0B568 /* OOAIDebugInspectorModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OOAIDebugInspectorModule.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1A0CF1B60D89FD9A00E0B568 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/OOAIDebugInspectorModule.xib; sourceTree = "<group>"; };
@@ -169,7 +163,6 @@
 				1A2DFBC60D894A100055CF71 /* OOShipDebugInspectorModule.xib */,
 				1A0CF1B50D89FD9A00E0B568 /* OOAIDebugInspectorModule.xib */,
 				1A909C920F3C6DCA003AE160 /* OOShipGroupDebugInspectorModule.xib */,
-				1A06F2701196E51A00AFA5B4 /* OODebugSoundInspector.xib */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 			);
 			path = Resources;
@@ -214,8 +207,6 @@
 				1A02587B0C7F36CD00F622D4 /* OODebugUtilities.m */,
 				1AD26BF70C8434AB00B4BFD1 /* OOTextFieldHistoryManager.h */,
 				1AD26BF80C8434AB00B4BFD1 /* OOTextFieldHistoryManager.m */,
-				1A06F2901196E69500AFA5B4 /* OODebugSoundInspector.h */,
-				1A06F2911196E69500AFA5B4 /* OODebugSoundInspector.m */,
 				1A572FFA0D84BAB9003D4A26 /* Inspector */,
 				1A7E39ED180AC51300576095 /* RBSplitView */,
 			);
@@ -282,7 +273,6 @@
 				1A2DFBCB0D894A1D0055CF71 /* OOShipDebugInspectorModule.h in Headers */,
 				1A0CF1B10D89FD7700E0B568 /* OOAIDebugInspectorModule.h in Headers */,
 				1A909C880F3C6BBB003AE160 /* OOShipGroupDebugInspectorModule.h in Headers */,
-				1A06F2921196E69500AFA5B4 /* OODebugSoundInspector.h in Headers */,
 				1A7E39F3180AC51300576095 /* RBSplitSubview.h in Headers */,
 				1A7E39F5180AC51300576095 /* RBSplitView.h in Headers */,
 				1A7E39F7180AC51300576095 /* RBSplitViewPrivateDefines.h in Headers */,
@@ -368,7 +358,6 @@
 				1A2DFBC80D894A100055CF71 /* OOShipDebugInspectorModule.xib in Resources */,
 				1A0CF1B70D89FD9A00E0B568 /* OOAIDebugInspectorModule.xib in Resources */,
 				1A909C940F3C6DCA003AE160 /* OOShipGroupDebugInspectorModule.xib in Resources */,
-				1A06F2721196E51A00AFA5B4 /* OODebugSoundInspector.xib in Resources */,
 				1A42060212D6A2DB00B0FBB9 /* SplitViewThumb.png in Resources */,
 				1A22976514DE86C00024BED9 /* OODebugController.xib in Resources */,
 			);
@@ -394,7 +383,6 @@
 				1A2DFBCC0D894A1D0055CF71 /* OOShipDebugInspectorModule.m in Sources */,
 				1A0CF1B20D89FD7700E0B568 /* OOAIDebugInspectorModule.m in Sources */,
 				1A909C890F3C6BBB003AE160 /* OOShipGroupDebugInspectorModule.m in Sources */,
-				1A06F2931196E69500AFA5B4 /* OODebugSoundInspector.m in Sources */,
 				1A7E39F4180AC51300576095 /* RBSplitSubview.m in Sources */,
 				1A7E39F6180AC51300576095 /* RBSplitView.m in Sources */,
 			);
@@ -411,14 +399,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1A06F2701196E51A00AFA5B4 /* OODebugSoundInspector.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1A06F2711196E51A00AFA5B4 /* English */,
-			);
-			name = OODebugSoundInspector.xib;
-			sourceTree = "<group>";
-		};
 		1A0CF1B50D89FD9A00E0B568 /* OOAIDebugInspectorModule.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
