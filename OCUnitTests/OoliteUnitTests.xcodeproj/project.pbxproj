@@ -199,7 +199,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = OO;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "The Oolite team";
 			};
 			buildConfigurationList = 1AD7C5F315AEF30F008C3BC8 /* Build configuration list for PBXProject "OoliteUnitTests" */;
