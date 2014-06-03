@@ -339,7 +339,7 @@ static NSMutableArray *ScanTokensFromString(NSString *values)
 	NSString				*token = nil;
 	static NSCharacterSet	*space_set = nil;
 	
-	if (values == nil)  return [NSArray array];
+	if (values == nil)  return [NSMutableArray array];
 	if (space_set == nil) space_set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
 	
 	result = [NSMutableArray array];
