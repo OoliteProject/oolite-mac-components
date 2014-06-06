@@ -76,20 +76,60 @@ static NSArray *ResourceManagerRootPaths(void);
 }
 
 
-- (IBAction) showExpansionPacks:(id)sender
+- (IBAction) showExpansionPacks:sender
 {
-	// Adapted from -[GameController showAddOnsAction:].
-	BOOL			pathIsDirectory;
-	NSString		*path = nil;
-	NSArray			*rootPaths = ResourceManagerRootPaths();
-	NSUInteger		i, count = [rootPaths count];
+	NSArray *paths = ResourceManagerRootPaths();
 	
-	for (i = 0; i < count; i++)
-	{
-		path = [rootPaths objectAtIndex:i];
-		if ([[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&pathIsDirectory] && pathIsDirectory) break;
+	// Look for an AddOns directory that actually contains some AddOns.
+	for (NSString *path in paths) {
+		if ([self addOnsExistAtPath:path]) {
+			[self openPath:path];
+			return;
+		}
 	}
-	if (path != nil) [[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:path]];
+	
+	// If that failed, look for an AddOns directory that actually exists.
+	for (NSString *path in paths) {
+		if ([self isDirectoryAtPath:path]) {
+			[self openPath:path];
+			return;
+		}
+	}
+	
+	// None found, create the default path.
+	[NSFileManager.defaultManager createDirectoryAtPath:paths[0]
+							withIntermediateDirectories:YES
+											 attributes:nil
+												  error:NULL];
+	[self openPath:paths[0]];
+}
+
+
+- (BOOL) isDirectoryAtPath:(NSString *)path
+{
+	BOOL isDirectory;
+	return [NSFileManager.defaultManager fileExistsAtPath:path isDirectory:&isDirectory] && isDirectory;
+}
+
+
+- (BOOL) addOnsExistAtPath:(NSString *)path
+{
+	if (![self isDirectoryAtPath:path])  return NO;
+	
+	NSWorkspace *workspace = NSWorkspace.sharedWorkspace;
+	for (NSString *subPath in [NSFileManager.defaultManager enumeratorAtPath:path]) {
+		subPath = [path stringByAppendingPathComponent:subPath];
+		NSString *type = [workspace typeOfFile:subPath error:NULL];
+		if ([workspace type:type conformsToType:@"org.aegidian.oolite.expansion"])  return YES;
+	}
+	
+	return NO;
+}
+
+
+- (void) openPath:(NSString *)path
+{
+	[NSWorkspace.sharedWorkspace openURL:[NSURL fileURLWithPath:path]];
 }
 
 
