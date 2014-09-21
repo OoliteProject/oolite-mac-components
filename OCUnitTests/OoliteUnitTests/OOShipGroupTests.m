@@ -16,10 +16,10 @@
 	[group addShip:a];
 	[group addShip:b];
 	
-	STAssertTrue([group containsShip:a], @"Ship group should contain exactly the ships added to it.");
-	STAssertTrue([group containsShip:b], @"Ship group should contain exactly the ships added to it.");
-	STAssertFalse([group containsShip:c], @"Ship group should contain exactly the ships added to it.");
-	STAssertEquals(group.count, (NSUInteger)2, @"Ship group should contain exactly the ships added to it.");
+	XCTAssertTrue([group containsShip:a], @"Ship group should contain exactly the ships added to it.");
+	XCTAssertTrue([group containsShip:b], @"Ship group should contain exactly the ships added to it.");
+	XCTAssertFalse([group containsShip:c], @"Ship group should contain exactly the ships added to it.");
+	XCTAssertEqual(group.count, (NSUInteger)2, @"Ship group should contain exactly the ships added to it.");
 	
 	[group release];
 	[a release];
@@ -40,19 +40,19 @@
 	[group addShip:b];
 	[group addShip:c];
 	
-	STAssertEquals(group.count, (NSUInteger)3, @"After adding three ships to a group, it should contain three ships.");
+	XCTAssertEqual(group.count, (NSUInteger)3, @"After adding three ships to a group, it should contain three ships.");
 	
 	[a release];
-	STAssertEquals(group.count, (NSUInteger)2, @"Releasing all strong references to a ship should remove it from any group it's in.");
+	XCTAssertEqual(group.count, (NSUInteger)2, @"Releasing all strong references to a ship should remove it from any group it's in.");
 	
-	STAssertTrue([group containsShip:b], @"After purging a released ship, remaining strongly-referenced ships should still be members of the group.");
-	STAssertTrue([group containsShip:c], @"After purging a released ship, remaining strongly-referenced ships should still be members of the group.");
+	XCTAssertTrue([group containsShip:b], @"After purging a released ship, remaining strongly-referenced ships should still be members of the group.");
+	XCTAssertTrue([group containsShip:c], @"After purging a released ship, remaining strongly-referenced ships should still be members of the group.");
 	
 	[b release];
-	STAssertEquals(group.count, (NSUInteger)1, @"Releasing all strong references to a ship should remove it from any group it's in.");
+	XCTAssertEqual(group.count, (NSUInteger)1, @"Releasing all strong references to a ship should remove it from any group it's in.");
 	
 	[c release];
-	STAssertEquals(group.count, (NSUInteger)0, @"Releasing all strong references to a ship should remove it from any group it's in.");
+	XCTAssertEqual(group.count, (NSUInteger)0, @"Releasing all strong references to a ship should remove it from any group it's in.");
 	
 	[group release];
 }
@@ -75,14 +75,14 @@
 			[s autorelease];
 		}
 		
-		STAssertEquals(group.count, (NSUInteger)300, @"Adding 300 ships to a group should produce a group with 300 ships in it.");
+		XCTAssertEqual(group.count, (NSUInteger)300, @"Adding 300 ships to a group should produce a group with 300 ships in it.");
 	}
 	
-	STAssertEquals(group.count, (NSUInteger)150, @"Releasing half the ships in a group with 300 ships in should produce a group with 150 ships in it.");
+	XCTAssertEqual(group.count, (NSUInteger)150, @"Releasing half the ships in a group with 300 ships in should produce a group with 150 ships in it.");
 	
 	[evenShips release];
 	
-	STAssertEquals(group.count, (NSUInteger)0, @"Releasing half the ships in a group with 300 ships in should produce a group with 150 ships in it.");
+	XCTAssertEqual(group.count, (NSUInteger)0, @"Releasing half the ships in a group with 300 ships in should produce a group with 150 ships in it.");
 	
 	[group release];
 }
@@ -107,10 +107,11 @@
 	NSUInteger count = 0;
 	for (ShipEntity *s in group)
 	{
+		(void)s;
 		count++;
 	}
 	
-	STAssertEquals(count, (NSUInteger)150, @"Fast iteration should hit every ship in a group once.");
+	XCTAssertEqual(count, (NSUInteger)150, @"Fast iteration should hit every ship in a group once.");
 	
 	[evenShips release];
 	[group release];

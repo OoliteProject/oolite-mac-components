@@ -26,7 +26,7 @@
 	
 	for (size_t i = 0; i < COUNT(testStrings); i++)
 	{
-		STAssertTrue(OOIsNumberLiteral(testStrings[i], NO), @"String \"%@\" should be considered a number literal (without allowing for spaces).", testStrings[i]);
+		XCTAssertTrue(OOIsNumberLiteral(testStrings[i], NO), @"String \"%@\" should be considered a number literal (without allowing for spaces).", testStrings[i]);
 	}
 }
 
@@ -42,8 +42,8 @@
 	
 	for (size_t i = 0; i < COUNT(testStrings); i++)
 	{
-		STAssertTrue(OOIsNumberLiteral(testStrings[i], YES), @"String \"%@\" should be considered a number literal (when allowing for spaces).", testStrings[i]);
-		STAssertFalse(OOIsNumberLiteral(testStrings[i], NO), @"String \"%@\" should not be considered a number literal (without allowing for spaces).", testStrings[i]);
+		XCTAssertTrue(OOIsNumberLiteral(testStrings[i], YES), @"String \"%@\" should be considered a number literal (when allowing for spaces).", testStrings[i]);
+		XCTAssertFalse(OOIsNumberLiteral(testStrings[i], NO), @"String \"%@\" should not be considered a number literal (without allowing for spaces).", testStrings[i]);
 	}
 }
 
@@ -63,7 +63,7 @@
 	
 	for (size_t i = 0; i < COUNT(testStrings); i++)
 	{
-		STAssertFalse(OOIsNumberLiteral(testStrings[i], YES), @"String \"%@\" should not be considered a number literal.", testStrings[i]);
+		XCTAssertFalse(OOIsNumberLiteral(testStrings[i], YES), @"String \"%@\" should not be considered a number literal.", testStrings[i]);
 	}
 }
 
