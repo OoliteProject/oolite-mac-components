@@ -49,13 +49,6 @@ SOFTWARE.
 }
 
 
-- (id)initWithOOColorDescription:(id)description
-{
-	[self release];
-	return [[NSColor colorWithOOColorDescription:description] retain];
-}
-
-
 - (OOColor *)asOOColor
 {
 	CGFloat r, g, b, a;

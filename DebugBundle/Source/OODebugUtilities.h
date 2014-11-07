@@ -42,7 +42,6 @@ SOFTWARE.
 
 // Wrapper for +[OOColor colorWithDescription:]
 + (NSColor *)colorWithOOColorDescription:(id)description;
-- (id)initWithOOColorDescription:(id)description;
 
 - (OOColor *)asOOColor;
 
