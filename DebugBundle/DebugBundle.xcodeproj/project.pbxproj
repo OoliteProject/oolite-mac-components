@@ -37,7 +37,7 @@
 		1A7E39F3180AC51300576095 /* RBSplitSubview.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7E39EE180AC51300576095 /* RBSplitSubview.h */; };
 		1A7E39F4180AC51300576095 /* RBSplitSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7E39EF180AC51300576095 /* RBSplitSubview.m */; };
 		1A7E39F5180AC51300576095 /* RBSplitView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7E39F0180AC51300576095 /* RBSplitView.h */; };
-		1A7E39F6180AC51300576095 /* RBSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7E39F1180AC51300576095 /* RBSplitView.m */; settings = {COMPILER_FLAGS = "-Wno-tautological-compare"; }; };
+		1A7E39F6180AC51300576095 /* RBSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7E39F1180AC51300576095 /* RBSplitView.m */; settings = {COMPILER_FLAGS = "-Wno-tautological-compare -Wno-deprecated-declarations"; }; };
 		1A7E39F7180AC51300576095 /* RBSplitViewPrivateDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7E39F2180AC51300576095 /* RBSplitViewPrivateDefines.h */; };
 		1A909C880F3C6BBB003AE160 /* OOShipGroupDebugInspectorModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A909C860F3C6BBB003AE160 /* OOShipGroupDebugInspectorModule.h */; };
 		1A909C890F3C6BBB003AE160 /* OOShipGroupDebugInspectorModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A909C870F3C6BBB003AE160 /* OOShipGroupDebugInspectorModule.m */; };
