@@ -188,7 +188,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 1A1AB0810909AE56001039FA /* Build configuration list for PBXProject "Oolite-importer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -293,6 +293,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.aegidian.oolite.md-importer";
 				PRODUCT_NAME = Oolite;
 				SECTORDER_FLAGS = "";
 				SYMROOT = ../../build;
@@ -342,6 +343,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.aegidian.oolite.md-importer";
 				PRODUCT_NAME = Oolite;
 				SECTORDER_FLAGS = "";
 				SYMROOT = ../../build;
@@ -360,6 +362,7 @@
 			baseConfigurationReference = 1A1966F5104EC4880079B400 /* oolite-targets.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				ENABLE_TESTABILITY = YES;
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
@@ -397,6 +400,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.aegidian.oolite.md-importer";
 				PRODUCT_NAME = Oolite;
 				SECTORDER_FLAGS = "";
 				SYMROOT = ../../build;

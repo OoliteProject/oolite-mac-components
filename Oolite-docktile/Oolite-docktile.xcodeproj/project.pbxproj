@@ -154,7 +154,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "the Oolite team";
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "Oolite-docktile" */;
@@ -240,6 +240,7 @@
 				GCC_PREFIX_HEADER = "Oolite-docktile_Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = org.oolite.docktileplugin;
 				PRODUCT_NAME = Oolite;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SYMROOT = ../../build;
@@ -264,6 +265,7 @@
 				GCC_PREFIX_HEADER = "Oolite-docktile_Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = org.oolite.docktileplugin;
 				PRODUCT_NAME = Oolite;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SYMROOT = ../../build;
@@ -287,6 +289,7 @@
 				GCC_PREFIX_HEADER = "Oolite-docktile_Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = org.oolite.docktileplugin;
 				PRODUCT_NAME = Oolite;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SYMROOT = ../../build;
@@ -302,6 +305,7 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

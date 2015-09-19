@@ -308,7 +308,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "the Oolite team";
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "DebugBundle" */;
@@ -486,6 +486,7 @@
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				ONLY_ACTIVE_ARCH = YES;
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = org.oolite.debugsupport;
 				PRODUCT_NAME = Debug;
 				SYMROOT = ../../build;
 				USER_HEADER_SEARCH_PATHS = "../../src/Cocoa ../../src/Core/** $(SYMROOT)/$(CONFIGURATION)/include/js";
@@ -510,6 +511,7 @@
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = org.oolite.debugsupport;
 				PRODUCT_NAME = Debug;
 				SYMROOT = ../../build;
 				USER_HEADER_SEARCH_PATHS = "../../src/Cocoa ../../src/Core/** $(SYMROOT)/$(CONFIGURATION)/include/js";
@@ -521,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1AD88FD9103F2F0500AA36F4 /* oolite-options.xcconfig */;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
