@@ -291,7 +291,7 @@ static NSDictionary *OOParseRolesFromString(NSString *string)
 {
 	NSMutableDictionary		*result = nil;
 	NSArray					*tokens = nil;
-	unsigned				i, count;
+	NSUInteger				i, count;
 	NSString				*role = nil;
 	float					probability;
 	NSScanner				*scanner = nil;
