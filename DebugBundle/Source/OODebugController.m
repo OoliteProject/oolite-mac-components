@@ -372,7 +372,7 @@ static void SetDisplayLogMessagesInClassThroughJS(NSString *msgClass, BOOL displ
 	shipRole = [createShipPanelTextField stringValue];
 	if ([shipRole length] != 0)
 	{
-		[self performSelector:@selector(spawnShip:) withObject:shipRole afterDelay:0.1f];
+		[self performSelector:@selector(spawnShip:) withObject:shipRole afterDelay:0.1];
 		[[NSUserDefaults standardUserDefaults] setObject:shipRole forKey:@"debug-create-ship-panel-last-role"];
 	}
 	

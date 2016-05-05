@@ -38,7 +38,7 @@ SOFTWARE.
 {
 	NSRect				basicIDFrame, secondaryIDFrame, targetSelfFrame, rootFrame;
 	NSView				*rootView = [self rootView];
-	float				delta;
+	CGFloat				delta;
 	
 	id object = [self object];
 	

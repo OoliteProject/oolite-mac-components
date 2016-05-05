@@ -32,6 +32,13 @@ SOFTWARE.
 #import "OOShipGroup.h"
 
 
+@interface NSObject (OOCompareByPointerValue)
+
+- (NSComparisonResult) ooCompareByPointerValue:(id)other;
+
+@end
+
+
 @implementation OOShipGroupDebugInspectorModule
 
 - (void) awakeFromNib

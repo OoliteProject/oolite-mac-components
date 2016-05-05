@@ -231,7 +231,7 @@ enum
 						   range:emphasisRange];
 	}
 	
-	doScroll = [verticalScroller floatValue] > 0.980;
+	doScroll = [verticalScroller floatValue] > 0.980f;
 	
 	textStorage = [consoleTextView textStorage];
 	[textStorage appendAttributedString:mutableStr];

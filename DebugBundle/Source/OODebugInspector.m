@@ -153,7 +153,7 @@ static NSMutableDictionary		*sActiveInspectors = nil;
 - (void) placeModules
 {
 	// Lay out modules vertically in panel.
-	float				totalHeight = 4; // Margin at bottom
+	CGFloat				totalHeight = 4; // Margin at bottom
 	NSRect				frame;
 	NSView				*contentView = nil, *moduleView = nil;
 	NSSize				size;
