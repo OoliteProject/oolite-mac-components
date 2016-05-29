@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'weaksetUnitTests' target in the 'weaksetUnitTests' project
+// Prefix header for all source files of the 'OOWeakSetUnitTests' target in the 'OOWeakSetUnitTests' project
 //
 
 #ifdef __OBJC__

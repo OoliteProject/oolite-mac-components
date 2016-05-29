@@ -1,5 +1,10 @@
-#import "OOIsNumberLiteralTests.h"
+#import <XCTest/XCTest.h>
+
 #import "OOIsNumberLiteral.h"
+
+
+@interface OOIsNumberLiteralTests: XCTestCase
+@end
 
 
 #define COUNT(x)	(sizeof x / sizeof *x)

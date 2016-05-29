@@ -1,6 +1,11 @@
-#import "OOShipGroupTests.h"
-#import "ShipEntity.h"
+#import <XCTest/XCTest.h>
+
 #import "OOShipGroup.h"
+#import "ShipEntity.h"
+
+
+@interface OOShipGroupTests: XCTestCase
+@end
 
 
 @implementation OOShipGroupTests
