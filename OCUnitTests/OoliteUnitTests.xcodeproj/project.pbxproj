@@ -10,6 +10,8 @@
 		1A0CD53A15AF0BCE00970505 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0CD53915AF0BCE00970505 /* Cocoa.framework */; };
 		1A0CD54415AF0BCE00970505 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A0CD54215AF0BCE00970505 /* InfoPlist.strings */; };
 		1A0CD54F15AF0CFE00970505 /* OOWeakTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0CD54E15AF0CFE00970505 /* OOWeakTestObject.m */; };
+		1A0E92D71CFB0D5D004D669A /* OOPriorityQueueTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E92D61CFB0D5D004D669A /* OOPriorityQueueTest.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		1A0E92DA1CFB0D74004D669A /* OOPriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E92D91CFB0D74004D669A /* OOPriorityQueue.m */; };
 		1A5748DF15E96088005D1D8A /* OOIsNumberLiteralTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5748DE15E96088005D1D8A /* OOIsNumberLiteralTests.m */; };
 		1A5748E315E960A5005D1D8A /* OOIsNumberLiteral.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5748E215E960A5005D1D8A /* OOIsNumberLiteral.m */; };
 		1AB2D62B15B86F1100177AAF /* OOWeakReference.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2D62815B86F1100177AAF /* OOWeakReference.m */; };
@@ -76,6 +78,9 @@
 		1A0CD54815AF0BCE00970505 /* OoliteUnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OoliteUnitTests-Prefix.pch"; sourceTree = "<group>"; };
 		1A0CD54D15AF0CFE00970505 /* OOWeakTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OOWeakTestObject.h; sourceTree = "<group>"; };
 		1A0CD54E15AF0CFE00970505 /* OOWeakTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OOWeakTestObject.m; sourceTree = "<group>"; };
+		1A0E92D61CFB0D5D004D669A /* OOPriorityQueueTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OOPriorityQueueTest.m; sourceTree = "<group>"; };
+		1A0E92D81CFB0D74004D669A /* OOPriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOPriorityQueue.h; path = src/Core/OOPriorityQueue.h; sourceTree = "<group>"; };
+		1A0E92D91CFB0D74004D669A /* OOPriorityQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOPriorityQueue.m; path = src/Core/OOPriorityQueue.m; sourceTree = "<group>"; };
 		1A5748DE15E96088005D1D8A /* OOIsNumberLiteralTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OOIsNumberLiteralTests.m; sourceTree = "<group>"; };
 		1A5748E115E960A5005D1D8A /* OOIsNumberLiteral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OOIsNumberLiteral.h; path = src/Core/OOIsNumberLiteral.h; sourceTree = "<group>"; };
 		1A5748E215E960A5005D1D8A /* OOIsNumberLiteral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OOIsNumberLiteral.m; path = src/Core/OOIsNumberLiteral.m; sourceTree = "<group>"; };
@@ -124,6 +129,7 @@
 			children = (
 				1AB2D62E15B86F8000177AAF /* OOWeakSetUnitTests.m */,
 				1A5748DE15E96088005D1D8A /* OOIsNumberLiteralTests.m */,
+				1A0E92D61CFB0D5D004D669A /* OOPriorityQueueTest.m */,
 				1AFE04F51711EC0A005576F0 /* OOShipGroupTests.m */,
 			);
 			name = "Unit tests";
@@ -192,6 +198,8 @@
 				1AB2D62615B86F1100177AAF /* OOCocoa.h */,
 				1A5748E115E960A5005D1D8A /* OOIsNumberLiteral.h */,
 				1A5748E215E960A5005D1D8A /* OOIsNumberLiteral.m */,
+				1A0E92D81CFB0D74004D669A /* OOPriorityQueue.h */,
+				1A0E92D91CFB0D74004D669A /* OOPriorityQueue.m */,
 				1AFE04F11711E8EA005576F0 /* OOShipGroup.h */,
 				1AFE04F21711E8EA005576F0 /* OOShipGroup.m */,
 				1AB2D62715B86F1100177AAF /* OOWeakReference.h */,
@@ -342,9 +350,11 @@
 			files = (
 				1A0CD54F15AF0CFE00970505 /* OOWeakTestObject.m in Sources */,
 				1AB2D62B15B86F1100177AAF /* OOWeakReference.m in Sources */,
+				1A0E92DA1CFB0D74004D669A /* OOPriorityQueue.m in Sources */,
 				1AB2D62C15B86F1100177AAF /* OOWeakSet.m in Sources */,
 				1AB2D62F15B86F8000177AAF /* OOWeakSetUnitTests.m in Sources */,
 				1A5748DF15E96088005D1D8A /* OOIsNumberLiteralTests.m in Sources */,
+				1A0E92D71CFB0D5D004D669A /* OOPriorityQueueTest.m in Sources */,
 				1A5748E315E960A5005D1D8A /* OOIsNumberLiteral.m in Sources */,
 				1AFE04F01711E8A0005576F0 /* ShipEntity.m in Sources */,
 				1AFE04F31711E8EA005576F0 /* OOShipGroup.m in Sources */,
