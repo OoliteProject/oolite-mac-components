@@ -472,7 +472,7 @@ static void SetDisplayLogMessagesInClassThroughJS(NSString *msgClass, BOOL displ
 	
 	if (![[NSUserDefaults standardUserDefaults] boolForKey:@"debug-show-extra-menu-items"])
 	{
-		while (index = [menu indexOfItemWithTag:-42], index != -1)
+		while ((index = [menu indexOfItemWithTag:-42]), (index != -1))
 		{
 			[menu removeItemAtIndex:index];
 		}
