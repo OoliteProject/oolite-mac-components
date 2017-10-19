@@ -63,7 +63,7 @@ SOFTWARE.
 		_secondaryIdentityField = nil;
 		
 		rootFrame.size.height -= delta;
-		basicIDFrame.origin.y -= delta,
+		basicIDFrame.origin.y -= delta;
 		targetSelfFrame.origin.y -= delta;
 	}
 	
