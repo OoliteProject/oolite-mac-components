@@ -472,9 +472,16 @@ static void SetDisplayLogMessagesInClassThroughJS(NSString *msgClass, BOOL displ
 	
 	if (![[NSUserDefaults standardUserDefaults] boolForKey:@"debug-show-extra-menu-items"])
 	{
-		while ((index = [menu indexOfItemWithTag:-42]), (index != -1))
+		// Old school and not elegant, but it removes the compiler warning 
+		// on possible misuse of comma operator [-Wcomma], 
+		// produced by the following statement 
+		// while (index = [menu indexOfItemWithTag:-42], index != -1)
+		// Bracketing the operands with parenthesis, doesn't help either.
+		index = [menu indexOfItemWithTag:-42];
+		while (index != -1)
 		{
 			[menu removeItemAtIndex:index];
+			index = [menu indexOfItemWithTag:-42];
 		}
 	}
 }
