@@ -478,6 +478,10 @@ static animationData* currentAnimation = NULL;
 	return nil;
 }
 
+static NSPoint ConvertPointToScreen(NSWindow *window, NSPoint point) {
+	return [window convertRectToScreen:(NSRect){ origin: point }].origin;
+}
+
 // This method handles clicking and dragging in an empty portion of the subview, or in an alternate
 // drag view as designated by the delegate.
 - (void)mouseDown:(NSEvent*)theEvent {
@@ -524,13 +528,13 @@ static animationData* currentAnimation = NULL;
 // of the subview, and our RBSplitView has a transparent background. RBSplitView returns NO to
 // mouseDownCanMoveWindow, but the window should move here - after all, the window background
 // is visible right here! So we fake it and move the window as intended. Mwahahaha!
-		where =  [window convertBaseToScreen:where];
+		where = ConvertPointToScreen(window, where);
 		NSPoint origin = [window frame].origin;
 // Now we loop handling mouse events until we get a mouse up event.
 		while ((theEvent = [NSApp nextEventMatchingMask:NSLeftMouseDownMask|NSLeftMouseDraggedMask|NSLeftMouseUpMask untilDate:[NSDate distantFuture] inMode:NSEventTrackingRunLoopMode dequeue:YES])&&([theEvent type]!=NSLeftMouseUp)) {
 // Set up a local autorelease pool for the loop to prevent buildup of temporary objects.
 			NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
-			NSPoint now = [window convertBaseToScreen:[theEvent locationInWindow]];
+			NSPoint now = ConvertPointToScreen(window, [theEvent locationInWindow]);
 			origin.x += now.x-where.x;
 			origin.y += now.y-where.y;
 // Move the window by the mouse displacement since the last event.
