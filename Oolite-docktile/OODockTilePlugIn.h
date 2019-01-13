@@ -3,7 +3,6 @@
 OODockTilePlugIn.h
 
 Dock tile plug-in: manages dock menu when Oolite is docked but not running
-under Mac OS X 10.6 and later.
 
 
 Oolite
