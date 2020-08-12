@@ -297,11 +297,7 @@
 				PRODUCT_NAME = Oolite;
 				SECTORDER_FLAGS = "";
 				SYMROOT = ../../build;
-				WARNING_CFLAGS = (
-					"-Wall",
-					"-Wextra",
-					"-Wno-unused-parameter",
-				);
+				WARNING_CFLAGS = $OO_WARNING_FLAGS;
 				WRAPPER_EXTENSION = mdimporter;
 				ZERO_LINK = NO;
 			};
@@ -371,11 +367,7 @@
 				PRODUCT_NAME = Oolite;
 				SECTORDER_FLAGS = "";
 				SYMROOT = ../../build;
-				WARNING_CFLAGS = (
-					"-Wall",
-					"-Wextra",
-					"-Wno-unused-parameter",
-				);
+				WARNING_CFLAGS = $OO_WARNING_FLAGS;
 				WRAPPER_EXTENSION = mdimporter;
 				ZERO_LINK = NO;
 			};
@@ -452,11 +444,7 @@
 				PRODUCT_NAME = Oolite;
 				SECTORDER_FLAGS = "";
 				SYMROOT = ../../build;
-				WARNING_CFLAGS = (
-					"-Wall",
-					"-Wextra",
-					"-Wno-unused-parameter",
-				);
+				WARNING_CFLAGS = $OO_WARNING_FLAGS;
 				WRAPPER_EXTENSION = mdimporter;
 				ZERO_LINK = NO;
 			};
